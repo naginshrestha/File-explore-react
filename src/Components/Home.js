@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-export const Home = ({data}) => {
+export const Home = ({handleInsertNode =()=>{},data}) => {
 
 const[expand,setExpand] =useState(false)
 const [showInput,setShowInput] =useState({
@@ -18,7 +18,14 @@ const handleNewFolder =(e,isFolder) =>{
 
         isFolder
     })
+}
 
+const onAddFolder =(e) =>{
+    if (e.keyCode ===13 && e.target.value){
+        handleInsertNode(data.id,e.target.value,showInput.isFolder)
+
+        setShowInput({...showInput,visible:false})
+    }
 }
 
   if(data.isFolder)
@@ -40,7 +47,8 @@ const handleNewFolder =(e,isFolder) =>{
     showInput.visible && (
         <div className='inputContainer'>
             <span>{showInput.isFolder ?  <i class="fa-solid fa-folder"> </i> : <i class="fa-solid fa-file"> </i>}</span>
-            <input className='inpp' onBlur={() => setShowInput({...showInput,visible:false})} autoFocus/>
+
+            <input onKeyDown={onAddFolder} className='inpp' onBlur={() => setShowInput({...showInput,visible:false})} autoFocus/>
         </div>
 
     )
@@ -48,7 +56,7 @@ const handleNewFolder =(e,isFolder) =>{
 
 
     {data.items.map(item =>{
-        return <Home data={item} key={item.id}/>
+        return <Home  handleInsertNode ={handleInsertNode} data={item} key={item.id}/>
     })}
    </div>
    
