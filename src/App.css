@@ -1,0 +1,59 @@
+
+.header{
+  margin: 10px;
+}
+
+.folder{
+  background-color: rgb(233, 233, 233);
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.folder > span{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items:center;
+  margin-left: 15px;
+
+
+}
+.folder > span > p{
+  margin-left: 10px;
+}
+
+.file{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+
+} 
+.folderbutton{
+
+  margin-right: 10px;
+  padding: 5px;
+
+}
+.folderbutton :nth-child(2){
+  margin-left: 3px;
+}
+
+.inputContainer{
+  display: flex;
+  justify-content: start;
+  cursor: pointer;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  width: 280px;
+}
+.inpp{
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid black;
+
+}
