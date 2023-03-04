@@ -9,16 +9,29 @@ function App() {
   const[folderData,setFolderData] =useState(jsondata)
 
   const {insertNode} = useTree();
+  const {updateNode} = useTree();
+  const {deleteNode} = useTree();
 
-  const handleInsertNode = (folderId,item,isFolder)=>{
+  const handleInsertNode = (folderId,item,isFolder,name)=>{
 
 
-
-    const finalTree = insertNode(folderData,folderId,item,isFolder)
-
+    if(name == "input")
+    {
+     const finalTree = insertNode(folderData,folderId,item,isFolder)
      setFolderData(finalTree)
+    }
 
+    if (name == "update"){
+      const finalTree = updateNode(folderData,folderId,item,isFolder)
 
+      setFolderData(finalTree)
+    }
+
+    if(name == "delete"){
+      const finalTree = updateNode(folderData,folderId)
+
+      setFolderData(finalTree)
+    }
 
   }
 

@@ -7,7 +7,7 @@
   background-color: rgb(233, 233, 233);
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 500px;
   cursor: pointer;
   align-items: center;
 }
@@ -39,6 +39,12 @@
 
 }
 .folderbutton :nth-child(2){
+  margin-left: 3px;
+}
+.folderbutton :nth-child(3){
+  margin-left: 3px;
+}
+.folderbutton :nth-child(4){
   margin-left: 3px;
 }
 
